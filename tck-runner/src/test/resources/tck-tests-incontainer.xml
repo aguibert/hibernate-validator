@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Hibernate Validator, declare and validate application constraints
+  ~
+  ~ License: Apache License, Version 2.0
+  ~ See the license.txt file in the root directory or <http://www.apache.org/licenses/LICENSE-2.0>.
+  -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="JSR-380-TCK" verbose="1">
+    <test name="JSR-380-TCK">
+	
+		<!-- To run all tests, leave this block un-commented
+        <packages> 
+            <package name="org.hibernate.beanvalidation.tck.tests">
+            </package> 
+        </packages>   -->
+		
+
+<classes>
+	<!-- EXCLUDES --> <!-- <class name=""> <methods> <exclude name=".*" /> </methods> </class>
+	-->
+	<!-- CHALLENGE:  This test expects an error on-use of the app, but Liberty throws an error on deployment due to CDI scanning -->
+	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithEmptyValidatedExecutableTypesTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<!-- Skip JavaFX tests -->
+	<class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.NestedContainerElementConstraintsTest"> <methods> <exclude name=".*" /> </methods> </class>
+	
+	  <!-- PASSING -->
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$ValidContinent"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$ValidTestBean"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$DummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$TestBean"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$Person"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$Continent"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$ExceptionThrowingMessageInterpolator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$ValidTestBean$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$TestBeanWithClassLevelConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest"> <methods> <exclude name=".*" /> </methods> </class>	
+	  <class name="org.hibernate.beanvalidation.tck.tests.util.ConstraintViolationAssertTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithEmptyValidatedExecutableTypesTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ValidationProviderTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ValidationProviderTest$2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.User"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.CustomMessageInterpolatorTest$Person"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ConfigurationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithValidatedExecutableTypesContainingNONETest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapCustomProviderDefinedInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapNonAvailableValidationProviderTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapCustomProviderDefinedInValidationXmlTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ConfigurationTest$NonResettableInputStream"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithValidatedExecutableTypesContainingALLAndNONETest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.CustomMessageInterpolatorTest$DummyMessageInterpolator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.CustomMessageInterpolatorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.Address"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ValidationProviderTest$3"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$ExceptionThrowingClockProvider"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$Person"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.FutureRelativePartialDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderFutureOrPresentTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderPastTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.FixedClockProvider"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$CustomClockProvider"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.PastRelativePartialDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.FutureOrPresentRelativePartialDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.PastOrPresentDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.PastOrPresentRelativePartialDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderPastOrPresentTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.PastDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$DefaultClockProviderIsValid"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderFutureTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$DefaultClockProviderIsValidEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.defaultinjection.DefaultInjectionTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.defaultinjection.ConstantMessageInterpolator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.OfflineCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.DeliveryService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.AnotherDeliveryService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.ParameterProducer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.ExecutableTypesTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.LongName"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.ValidObject$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.YetAnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnotherShipmentService2stInHierarchy"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.InvocationTracker"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.EarlierInterceptor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.Late"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.CustomConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.LaterInterceptor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.CustomConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.ValidationInterceptorPriorityTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.priority.Early"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.global.Event"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.global.CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.Event"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.UserService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.DeliveryServiceImpl"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.NameProducer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.globallydisabled.Event"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.globallydisabled.ExecutableValidationGloballyDisabledTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ShipmentBase"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ValidAnotherBookingService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.LongName"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnotherShipmentService1stInHierarchy"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.Order"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.CrossParameterConstraint$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.CrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnotherBookingService$IgnoredValidationGroup"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.PersonService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MapValueValueExtractorUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedValueExtractorsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ClockProviderUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedObjectsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.GreetingConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MapKeyValueExtractorUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MapValueValueExtractorUsingDependencyInjectionThrowsException"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.Greeter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MessageHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedValueExtractorsTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MessageInterpolatorUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedServiceLoaderValueExtractorsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.TraversableResolverUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ConstraintValidatorFactoryUsingDependencyInjection"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.GreetingConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedXmlAndServiceLoaderValueExtractorsTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.ConstraintValidatorInjectionTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.ConstraintValidatorInjectionTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.GreetingConstraintValidatorForString"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.GreetingConstraintValidatorForInteger"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.GreetingConstraint"> <methods> <exclude name=".*" /> </methods> </class>	  
+	  <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.ValidationTestEjb"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.ConstraintValidatorInjectionTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.GreetingConstraintValidatorForInteger"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.Greeter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.JndiRetrievalTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.ConstantMessageInterpolator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.runtime.ValueExtractorExceptionWrapping$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.runtime.ValueExtractorExceptionWrapping"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.runtime.ValueExtractorExceptionWrapping$Entity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$BeanWithWrapperWithRevertedTwoTypeArgumentsAndForcedUnwrapping"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithTwoTypeArgumentsFirstValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$IntegerWrapperWithForcedUnwrapping"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$EntityWithNoUnwrapping"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$EntityWithNoContraintValidatorForUnwrappedValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.ValueExtractorDefinitionTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.ValueExtractorDefinitionTest$ContainerHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.CustomConstraint$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.ContainerValueExtractorCountCalls"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.LocalMapKeyExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.RetailOrder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.IndexedValueContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.CustomConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.ValueContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.NullNodeNameContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.RetailOrder$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.KeyedValueContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.IterableValueContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.Order"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.ContainerValueExtractorCompareInstance"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.Container"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.LocalMapValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.model.ContainerElement"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.InvalidValueExtractorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.InvalidValueExtractorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.ValueExtractorDefinitionTest$MapHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.InvalidValueExtractorTest$SeveralExtractedValuesValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorFromServiceLoaderTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorDeclaredInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.SomeReference"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractor2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.Visitor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.Cinema"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.MultipleValueExtractorsDeclaredProgrammaticallyForSameTypeAndTypeArgumentTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorDefinedInConfigurationApiTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$IWrapper212ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity2$Bean21"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.Wrapper2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper22"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper211"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper11"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper21"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.ContainerElementEntity2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper221"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper221ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper22ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$IWrapper111ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$IWrapper211ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper212ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$Wrapper2ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper211ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper111ValueExtractor1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper21ValueExtractor0"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest$ListOfStringPropertyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.MapValueExtractorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest$BasicPropertiesEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.IterableValueExtractorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.ListValueExtractorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.MapValueExtractorTest$MapHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest$ListPropertyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.IterableValueExtractorTest$IterableHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest$OptionalDoubleHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.IterableValueExtractorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest$OptionalHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest$OptionalLongHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest$OptionalIntHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest$MapPropertyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest$SetPropertyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.ListValueExtractorTest$ListHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.IterableValueExtractorTest$IterableImpl"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.ListValueExtractorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.OptionalValueExtractorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.MapValueExtractorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.MyConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.CustomConstraintValidatorTest$CustomConstraintValidatorFactory"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.CustomConstraintValidatorTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.MyConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.MySecondConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.Negative"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.CustomConstraintValidatorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.CustomConstraintValidatorTest$Ice"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.Positive"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.CustomConstraintValidatorTest$Freezer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.NegativeConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.GenericAndCrossParameterConstraint$CrossParameterValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassI"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithObjectValidator$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassH"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$AnotherBean"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Ambiguous$AmbiguousValidatorForSerializable"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassH"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidLong$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithSeveralValidators$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassC"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithSeveralValidators"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithObjectValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithObjectArrayValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$AdvancedCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$OfflineCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ConstraintWithTwoValidatorsForTheSameType$AnotherValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassG"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassBHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$CustomInterfaceImpl"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidLong"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$YetAnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForAnotherSubClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$AnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Ambiguous$AmbiguousValidatorForDummy"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$AnotherBaseClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassD"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassA"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassE"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$TestBean"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassHContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassA"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.GenericAndCrossParameterConstraint$GenericValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassB"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassG"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassAHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassIHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithoutValidator$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$EvenYetAnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithSeveralValidators$AnotherValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Ambiguous"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$OnlineCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassGHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassF"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassF"> <methods> <exclude name=".*" /> </methods> </class>
+	  <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Woman"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.SecurityCheck$SecurityCheckValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.TightSecurity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Person"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.ValidationRequirementTest$StaticFieldsAndProperties"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Building"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.SecurityCheck"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.Account"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.ConsistentDateParameterValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.OnlineCalendarServiceValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.OnlineCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.MethodValidationRequirementTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NullNotNullConstraintsTest$NullDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DecimalMinDecimalMaxConstraintsTest$DecimalMaxDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DecimalMinDecimalMaxConstraintsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest$NegativeEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.AssertConstraintsTests$AssertFalseDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.BuiltinValidatorOverrideTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest$PositiveOrZeroEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotBlankConstraintTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.EmailConstraintTest$EmailStringBuilderDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DigitsConstraintTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.MinMaxConstraintsTest$MinDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$FutureOrPresentRelativePartialDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DigitsConstraintTest$DigitsDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.AssertConstraintsTests$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.SizeConstraintTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.BuiltinValidatorOverrideTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NullNotNullConstraintsTest$NotNullDummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.BuiltinValidatorOverrideTest$DummyEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintCompositionTest$DummyEntity4"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintCompositionTest$DummyEntity2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.CompositeConstraint2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintCompositionTest$DummyEntity1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GenericAndCrossParameterConstraint$ParametersValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GenericAndCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.NotEmpty$DummyGroup"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddressMixDirectAnnotationAndListContainer$FrenchZipcodeMixDirectAnnotationAndListContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposedGenericAndCrossParameterConstraint$ObjectValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddressMixDirectAnnotationAndListContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$DummyEntityWithGenericAndCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Severity$Error"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddressListContainer$FrenchZipcodeListContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposedConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GermanZipcode$GermanZipcodeConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchZipcodeConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$DummyEntityWithAnotherIllegallyComposedConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$DummyEntityWithDefaultAttributeName"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ParametersNotEmpty$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Severity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposedGenericAndCrossParameterConstraint$ParametersValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.NotEmpty"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddress"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GermanZipcode"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ParametersNotEmpty"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddress$FullAddressCheck"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Name"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$DummyEntityWithZipCode"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchAddressListContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposingConstraintSupportingParameters$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Severity$Info"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Shoe"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposedGenericAndCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Address"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.User$BuyInOneClick"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.CyclicGroupSequence1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.CreditCard"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Book$All"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.CyclicGroupSequence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Car"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.DefaultGroupRedefinitionTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.IsAdult$IsAdultValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.B2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.Later"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.GroupSequenceIsolationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.SafeEncryption"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.Heavy"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.C"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.Minimal"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.A"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.F1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.Complete"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.IsAdult"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.B3"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.SafeEncryption$SafeEncryptionValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.B1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.D1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupsequenceisolation.E"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Last"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.DefaultGroupRedefinitionTest$AddressWithNoImplicitDefaultGroupSequence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Order"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Auditable"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.GroupTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Animal$Domain"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Address$HighLevelCoherence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.ZipCodeCoherenceValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.InvalidGroupDefinitionsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.FullPostal"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationOnMethodParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.User"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationOnConstructorReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionWithSequenceAsFrom"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.PostalSequence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithSeveralGroupConversionsForSameFrom"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationOnField"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationOnMethodReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.BasicPostal"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationOnProperty"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.Address"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.model.UserWithGroupConversionButWithoutValidAnnotationConstructorParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserReadServiceBase"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserReadService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.ImplementationOfParallelInterfacesWithGroupConversionOnReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.ImplementationOfParallelInterfacesWithGroupConversionOnParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.InterfaceImplementationWithGroupConversionOnParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.ImplementationOfInterfaceWithGroupConversionOnParameterAndSuperClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.SubClassWithGroupConversionOnParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.impl.ImplementationOfInterfaceWithGroupConversionOnReturnValueAndSuperClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserWriteServiceWithGroupConversionOnParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserWriteServiceBase"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserReadServiceWithGroupConversionOnReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.service.UserWriteService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.model.UserWithContainerElementGroupConversionButWithoutValidAnnotationOnProperty"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.model.UserWithContainerElementGroupConversionButWithoutValidAnnotationOnMethodReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.model.UserWithContainerElementGroupConversionWithSequenceAsFrom"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.model.UserWithContainerElementGroupConversionButWithoutValidAnnotationConstructorParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.service.UserReadService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.service.impl.ImplementationOfParallelInterfacesWithGroupConversionOnParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.containerelement.service.impl.ImplementationOfInterfaceWithGroupConversionOnParameterAndSuperClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.DefaultGroupRedefinitionTest$AddressWithDefaultInGroupSequence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Author"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.Animal"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.CyclicGroupSequence2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.inheritance.GroupInheritanceTest$All"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.groups.inheritance.GroupInheritanceTest"> <methods> <exclude name=".*" /> </methods> </class>
+	  <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintdefinition.ConstraintDefinitionsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintdefinition.AlwaysValid$StaticConstraintValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$OnlineCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.CrossParameterConstraintWithValidationAppliesTo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$PaperCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidCrossParameterConstraint$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.ConstraintWithObjectAndObjectArrayValidator$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidDefaultGroup"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidGroupsType$InvalidDefaultGroupValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityWithValidationAppliesToOfWrongType"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidPayloadClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.GenericAndCrossParameterConstraintWithValidationAppliesToWithWrongDefaultValue$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityNoPayload"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityWithUnexpectedValidationAppliesTo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidDefaultPayload$DummyPayload"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.NoPayload$NoGroupsValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.NoPayload"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityNoGroups"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityValidProperty"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.ValidInPropertyName$ValidPropertyValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.GenericAndCrossParameterConstraintWithValidationAppliesToOfWrongType$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$AdvancedCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.GenericConstraintWithValidationAppliesTo$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidConstraintDefinitionsTest$DummyEntityNoValidationAppliesTo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidDefaultPayload$InvalidDefaultGroupValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.ConstraintWithTwoCrossParameterValidators$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.GenericAndCrossParameterConstraintWithValidationAppliesToWithWrongDefaultValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidGenericAndCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.NoGroups"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.ConstraintWithTwoCrossParameterValidators"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidGroupsType"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidMessageType$InvalidDefaultGroupValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.InvalidCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.invalidconstraintdefinitions.CrossParameterConstraintWithValidationAppliesTo$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraint$ObjectValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraintTest$OnlineCalendar"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraint$ParametersValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$TypeWithFieldWithConstraintTargetParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$Qux"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericConstraint$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraintTest$Calendar"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraintTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$Foo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$TypeWithConstraintTargetReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.ExplicitGenericConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$TypeWithFieldWithConstraintTargetReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$InterfaceWithConstraintTargetParameter"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$InterfaceWithConstraintTargetParameterImpl"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.CrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraintWithOneValidator$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$InterfaceWithConstraintTargetReturnValue"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.InvalidDeclarationOfGenericAndCrossParameterConstraintTest$InterfaceWithConstraintTargetReturnValueImpl"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.crossparameter.GenericAndCrossParameterConstraintTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintCustomContainerTest$CustomContainerValueExtractor"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest$TypeWithMap1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintOptionalTest$TypeWithOptional4"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintCustomContainerTest$CustomContainer"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintOptionalTest$TypeWithOptional6"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest$TypeWithMap6"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintSetTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest$TypeWithMap3"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest$TypeWithMap5"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest$TypeWithMap2"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest$TypeWithMap4"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintListTest$TypeWithList6"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.NestedContainerElementConstraintsTest$ListOfIterables"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.NestedContainerElementConstraintsTest$ListOfMaps"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintListTest$TypeWithList1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest$TypeWithMap1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintSetTest$TypeWithSet1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintSetTest$TypeWithSet3"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintCustomContainerTest$TypeWithCustomContainer5"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest$TypeWithMap5"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapValueTest$1"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.ContainerElementConstraintMapKeyTest$TypeWithMap4"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.ConstraintInheritanceTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.ValidFoo"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.ValidBar$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.ValidBar"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.model.Person"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.model.Order"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.ExtendedOrderService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.AbstractCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.ImplementationAddingParameterConstraints"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.ImplementationOfCascadingInterfaceExtendingUncascadingSuperClass"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.ImplementationMarkingParameterAsCascaded"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.ImplementationOfConstrainedAndUnconstrainedInterfaces"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.SubClassAddingParameterConstraints"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.impl.ExtendedOrderServiceImplementation"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.AnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.invaliddeclarations.service.YetAnotherCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.validdeclarations.service.impl.BusinessCalendarServiceImplementation"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.validdeclarations.service.impl.CalendarServiceImplementation"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.validdeclarations.service.BusinessCalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.validdeclarations.service.InterfaceMarkingReturnValueAsCascaded"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.inheritance.method.validdeclarations.service.CalendarService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.Customer$StrictChecks"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ProductOrderLine"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ContainerElementTypeDescriptorTest$LegalEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ComplexProductTypeChecks"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ConvertGroupDefaultFromTest$BeanHolder"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ContainerElementTypeDescriptorTest$ValidAddressValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.metadata.ExecutableDescriptorIgnoresValidatedExecutableXmlSettingsTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.ValidateReturnValueTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.User"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.Email"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.User$Extended"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.Item"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.LineItem"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.Order"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.Item$Basic"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.User$Basic"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.Customer$Extended"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.model.StockItem"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.service.OrderService$Basic"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.service.OrderService"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.service.OrderServiceWithRedefinedDefaultGroupSequence"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.parameternameprovider.CustomParameterNameProvider"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.parameternameprovider.User"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.parameternameprovider.ParameterNameProviderTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.parameternameprovider.BrokenCustomParameterNameProvider"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.MethodValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.ValidateConstructorParametersTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.ValidRetailOrder$List"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.ValidRetailOrderService$List"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.ValidRetailOrderServiceValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.MyCrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.ValidRetailOrderValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.methodvalidation.constraint.ValidLineItem$Validator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.propertylevel.User$CreditRatingA"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.ReservedElementNameTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.Optional"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.ValidPackage$ValidPackageValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeConstraintsForGetterXmlMappingTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeConstraintsForReturnValueXmlMappingTest$FishTank"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeIgnoreAnnotationsMappingTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeConstraintsForParameterXmlMappingTest$FishTank"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeIgnoreAnnotationsMappingTest$OrderField"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeConstraintsForFieldXmlMappingTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.containerelementlevel.ContainerElementTypeConstraintsForFieldXmlMappingTest$FishTank"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.DefaultSequenceDefinedInXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.TestGroup"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.ConstraintValidatorFactorySpecifiedInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.MethodAsGetterAndMethodNodeTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.CustomerRepository$ValidB2BRepository"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.IgnoreAnnotationsInMethodConfigurationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.IgnoreAnnotations$B"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.CustomerRepository"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.CustomerRepository$ValidB2BRepositoryValidator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.IgnoreAnnotations"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.MethodValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.IgnoreAnnotations$CrossParameterConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.IgnoreAnnotations$A"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.CrossRepositoryConstraint"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.ClockProviderSpecifiedInValidationXmlNoDefaultConstructorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.DummyMessageInterpolator"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version20InMappingXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.TestEntity"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.UnknownVersionInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version11InValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version10InValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdefinition.XmlConfiguredConstraintValidatorTest"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdefinition.Name"> <methods> <exclude name=".*" /> </methods> </class>
+      <class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdefinition.LengthValidator"> <methods> <exclude name=".*" /> </methods> </class>
+	  
+	  
+	  
+	  <class name="org.hibernate.beanvalidation.tck.tests.traversableresolver.TraversableResolverTest$DummyTraversableResolver"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.traversableresolver.TraversableResolverTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.traversableresolver.SnifferTraversableResolver"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest$ValidDirtBike$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$ValidFirstName$ValidFirstNameValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.LegacyValidOnContainerCascadingTest$ValidOnListWithoutTypeArgument"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.CascadingOnContainerElementsTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.NestedCascadingOnContainerElementsTest$AddressBook"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.LegacyValidOnContainerCascadingTest$ValidOnIterable"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.NestedCascadingOnContainerElementsTest$EmailAddressMap"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.CascadingOnContainerElementsTest$TypeWithList"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.LegacyValidOnContainerCascadingTest$Museum"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.CascadingOnContainerElementsTest$TypeWithSet"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.NestedCascadingOnContainerElementsTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.graphnavigation.containerelement.LegacyValidOnContainerCascadingTest$ValidOnList"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Person"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$PropertyLevelValidationAddingContainerElementNodes"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$PropertyLevelValidationAddingInContainerPropertyNodes"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$Person"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Item"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidationTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest$CompatiblePersons"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.DummyBean"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest$Person"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest$Gender"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest$Group"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.DummyValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.Dummy"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.validatorcontext.ConstraintValidatorContextTest$CompatiblePersonsValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Shipment"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Boy"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Last"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.OrderLine"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$FieldLevelValidationAddingParameterNode$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Order"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.NotEmpty"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ProductCategory"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest$Second"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Item$Basic"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$PropertyLevelValidationAddingInContainerPropertyNodes$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Address$Minimal"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$Bar"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$ValidName$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.GetterDefinitionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.User"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.GroupConversionValidationTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.GroupConversionValidationTest$TestAddresses"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.EndUser"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.Complex"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.BasicPostal"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.Address"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.GroupConversionValidationTest$FooHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.EndUserImpl"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.AbstractContainerElementGroupConversionValidationTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.AbstractContainerElementGroupConversionValidationTest$TestAddresses"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.ComplexPostal"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.Complete"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.Complex"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.BasicPostal"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.AbstractContainerElementGroupConversionValidationTest$TestRegisteredAddresses"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.Address"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.RegisteredAddresses"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Location"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ActorListBased"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateValueTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$Country"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$CrossParameterValidationAddingParameterBeanAndPropertyNodes$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$ValidFirstName"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.BadlyBehavedEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidMovieStudioValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$PropertyLevelValidationAddingBeanAndPropertyNodes"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest$DirtBike"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Address"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ActorCollectionBased"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.PropertyPathTest$ActorDB"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.CustomPropertyPathTest$FooContainer"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidationTest$2"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Movie"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.PropertyPathTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.Second"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidationTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValueAccessStrategyTest$ValidName"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validation.ValidateTest$First"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$TestContext"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$ValidContinent$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$TestBeanWithPropertyConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$TestMessageInterpolator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$MyInterpolationException"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$CustomPayload"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.util.ConstraintViolationAssertTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithoutValidationXmlTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapCustomProviderDefinedInServiceFileTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapNonAvailableValidationProviderTest$DummyValidationProvider"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapNonAvailableValidationProviderTest$DummyValidatorConfiguration"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.ValidationProviderTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithValidatedExecutableTypesContainingALLTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithValidatedExecutableTypesContainingSomeTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.bootstrap.CustomMessageInterpolatorTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.AbstractTCKTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.FutureDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.FutureOrPresentDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.time.ClockProviderTest$DefaultClockProviderValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.defaultinjection.DefaultInjectionTest$Foo"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.defaultinjection.DefaultInjectionTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.BookingService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.Event"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.Delivery"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.AnotherCalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.ValidObject"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.CalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.types.OnlineCalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.global.ExecutableValidationBasedOnGlobalConfigurationTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnotherBookingService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.BookingService$IgnoredValidationGroup"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.CalendarServiceWithCascadingReturnValue"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.DeliveryService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.OrderService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.globallydisabled.CalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ValidAnotherBookingService$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnnotatedCalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.Shipment"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.AnotherShipmentService1stInHierarchyImpl"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ShipmentServiceImpl"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ValidPersonService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.CalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.OrderServiceImpl"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ShipmentServiceSubClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ShipmentService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ClassLevelAnnotatedCalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ExecutableValidationTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.executable.ValidPersonService$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedXmlAndServiceLoaderValueExtractorsTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.MapKeyValueExtractorUsingDependencyInjectionThrowsException"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ManagedServiceLoaderValueExtractorsTest$Foo"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.managedobjects.ParameterNameProviderUsingDependencyInjection"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.Greeter"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.cdi.factory.ConstraintValidatorInjectionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.ConstraintValidatorInjectionTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.GreetingConstraintValidatorForString"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.GreetingConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.cdi.ConstraintValidatorInjectionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.DefaultInjectionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.integration.ee.Foo"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.runtime.ValueExtractorExceptionWrapping$ThrowsExceptionInExtractValuesValueHolderExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.runtime.ValueExtractorExceptionWrapping$ValueHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithForcedUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$IntegerWrapperWithDisabledUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$BeanWithWrapperWithTwoTypeArguments"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$UnwrapByDefaultWrapperWithTwoTypeArgumentsSecondValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.model.IntegerWrapper"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.model.UnwrapByDefaultIntegerWrapperValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithTwoTypeArgumentsSecondValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithDisabledUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$BeanWithWrapperWithTwoTypeArgumentsAndForcedUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithTwoTypeArguments"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$ValueHolderExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$UnwrapByDefaultWrapperWithTwoTypeArgumentsFirstValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$Wrapper"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$EntityWithSkipAndUnwrapAtTheSameTime"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$EntityWithExplicitUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$ValueHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithImplicitUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$UnwrapByDefaultWrapperValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$WrapperWithRevertedTwoTypeArguments"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.unwrapping.ValueExtractionUnwrappingTest$IntegerWrapperWithImplicitUnwrapping"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.ValueExtractorDefinitionTest$StringContainerHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.ValueExtractorDefinitionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.definition.InvalidValueExtractorTest$NoExtractedValueValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.MultipleValueExtractorsInValidationXmlForSameTypeAndTypeArgumentTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractor3"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractorWithNoPublicNoArgConstructor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.Reference"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractor1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.ReferenceValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.model.CustomOptionalValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorWithNoPublicNoArgConstructorInValidationXmlTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorsPrecedenceTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper11ValueExtractor0"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.ContainerElementEntity1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity2$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity1$Bean11"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity1$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity1$Bean12"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.CascadingEntity2$Bean22"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper212"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.ContainerElementEntity3"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.IWrapper111"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.model.Wrapper1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$Wrapper2ValueExtractor0"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$Wrapper2ValueExtractor1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$IWrapper111ValueExtractor1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.ContainerElementValueExtractorResolutionAlgorithmTest$IWrapper111ValueExtractor0"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.valueextraction.resolution.CascadingValueExtractorResolutionAlgorithmTest$IWrapper11ValueExtractor0"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.CustomConstraintValidatorTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.CustomConstraintValidatorTest$SecondDummy"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.MySecondConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.CustomConstraintValidatorTest$Dummy"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.validatorfactory.DefaultConstraintValidatorFactoryTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.ZeroConstraintValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.BoundariesConstraintValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.PositiveConstraintValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.CustomConstraintValidatorTest$Shoe"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.Zero"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.CustomConstraintValidatorTest$OddShoe"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.customconstraint.Author"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassHHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.GenericAndCrossParameterConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithoutValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassI"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidInteger$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidInteger"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.MinMax"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$PrimitiveHolder"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Suburb"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassIContainerValueExtractor"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassEService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Bar"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorBaseClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Suburb$Facility"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CrossParameterConstraintWithObjectArrayValidator$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ConstraintWithTwoValidatorsForTheSameType$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForAnotherBaseClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ConstraintWithTwoValidatorsForTheSameType"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassFService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SerializableBarSubclass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.BaseClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$AnotherSubClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Coordinate"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForCustomClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$CustomClass"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForSubClassB"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.CustomConstraint$ValidatorForCustomInterface"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Dummy"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassE"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassD"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$CustomInterface"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.Foo"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.SubClassC"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassIContainer"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.validatorresolution.ValidatorResolutionTest$SubClassDService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.DummyGroup"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Person$Gender"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.SuperWoman"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Citizen"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.ValidationRequirementTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.User"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.ConsistentDateParameters"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.CalendarService"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.method.CalendarEvent"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.application.Visibility"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.InvertedNotNullValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DecimalMinDecimalMaxConstraintsTest$DecimalMinDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$FutureOrPresentDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NullNotNullConstraintsTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$PastRelativePartialDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotEmptyConstraintTest$NotEmptyDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.MinMaxConstraintsTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotBlankConstraintTest$NotBlankStringBuilderDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest$PositiveEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DecimalMinDecimalMaxConstraintsTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotBlankConstraintTest$NotBlankDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotBlankConstraintTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NegativePositiveConstraintsTest$NegativeOrZeroEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.SizeConstraintTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.MinMaxConstraintsTest$MaxDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest$PatternDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$PastDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotEmptyConstraintTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$FutureRelativePartialDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.AssertConstraintsTests"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NullNotNullConstraintsTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.DigitsConstraintTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.SizeConstraintTest$SizeDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.EmailConstraintTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$PastOrPresentDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.NotEmptyConstraintTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.EmailConstraintTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.EmailConstraintTest$EmailDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$PastOrPresentRelativePartialDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$FutureDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.AssertConstraintsTests$AssertTrueDummyEntity"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.MinMaxConstraintsTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.FuturePastConstraintsTest$FixedClockProvider"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GenericAndCrossParameterConstraint$ObjectValidator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.GermanAddress"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.CompositeConstraint4"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintCompositionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.CompositeConstraint3"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintCompositionTest$DummyEntity3"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedCompositeConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.NestedConstraintSingleViolation"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.nestedconstraintcomposition.CompositeConstraint1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Friend"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchZipcodeWithInvalidOverride"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposingConstraintSupportingParameters"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposingConstraintSupportingAnnotatedElement$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$1"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposingConstraintSupportingAnnotatedElement"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ComposedConstraint$Validator"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest$DummyEntityWithIllegallyComposedConstraint"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.ConstraintCompositionTest"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchZipcodeWithDefaultOverridesAttributeName"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.FrenchZipcode"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.Severity$Warn"/>
+      <class name="org.hibernate.beanvalidation.tck.tests.constraints.constraintcomposition.NotEmpty$NotEmptyValidator"/>
+	  
+	<!-- to run one simple test that passes:  -->
+	<class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest"/>
+</classes>
+    </test>
+</suite>

@@ -21,10 +21,12 @@
     <description>Aggregates dependencies and runs the JSR-380 TCK</description>
 
     <properties>
+		<container.home>C:\\devel\\projects\\libertyGit\\open-liberty\\dev\\build.image\\wlp</container.home>
+		
         <tck.suite.file>${project.build.directory}/dependency/beanvalidation-tck-tests-suite.xml</tck.suite.file>
         <wildfly.target-dir>${project.build.directory}/wildfly-${wildfly.version}</wildfly.target-dir>
         <validation.provider>org.hibernate.validator.HibernateValidator</validation.provider>
-        <remote.debug />
+        <!-- <remote.debug /> -->
 
         <hibernate-validator-parent.path>..</hibernate-validator-parent.path>
     </properties>
@@ -34,6 +36,14 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
         </dependency>
+				<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>2.0</version>
+			<scope>test</scope>
+		</dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>hibernate-validator</artifactId>
@@ -74,6 +84,17 @@
         <dependency>
             <groupId>org.jboss.arquillian.protocol</groupId>
             <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <!--<artifactId>arquillian-glassfish-managed-3.1</artifactId>-->
+            <artifactId>arquillian-wlp-managed-8.5</artifactId>
+            <!--<artifactId>arquillian-wlp-remote-8.5</artifactId>-->
+	    <!--<version>1.0.0.Final-SNAPSHOT</version>-->
+	    <!--I change the version since there is not 1.0.0.Final-->
+	    <!--<version>1.0.0.CR4</version>-->
+	    <version>1.0.0.Beta2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -130,6 +151,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+					<argLine>-Xmx3g</argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${tck.suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
@@ -141,6 +163,7 @@
                     </systemProperties>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
+					
                 </configuration>
             </plugin>
             <plugin>
@@ -227,133 +250,32 @@
                 </property>
             </activation>
             <properties>
-                <maven-surefire-plugin.argLine>-Xmx1024m -Djava.util.logging.manager=org.jboss.logmanager.LogManager</maven-surefire-plugin.argLine>
                 <arquillian.protocol>Servlet 3.0</arquillian.protocol>
+				<tck.suite.file>${project.build.directory}/test-classes/tck-tests-incontainer.xml</tck.suite.file>
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>org.wildfly.arquillian</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-wlp-managed-8.5</artifactId>
+					<version>1.0.0.Beta2</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
             <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>unpack-wildfly</id>
-                                <phase>generate-test-resources</phase>
-                                <goals>
-                                    <goal>unpack</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactItems>
-                                        <artifactItem>
-                                            <groupId>org.wildfly</groupId>
-                                            <artifactId>wildfly-dist</artifactId>
-                                            <version>${wildfly.version}</version>
-                                            <type>tar.gz</type>
-                                            <overWrite>false</overWrite>
-                                            <outputDirectory>${project.build.directory}</outputDirectory>
-                                        </artifactItem>
-                                    </artifactItems>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>copy-patch</id>
-                                <phase>generate-test-resources</phase>
-                                <goals>
-                                    <goal>copy</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactItems>
-                                        <artifactItem>
-                                            <groupId>${project.groupId}</groupId>
-                                            <artifactId>hibernate-validator-modules</artifactId>
-                                            <version>${project.version}</version>
-                                            <classifier>wildfly-${wildfly.version}-patch</classifier>
-                                            <type>zip</type>
-                                            <outputDirectory>${project.build.directory}</outputDirectory>
-                                        </artifactItem>
-                                    </artifactItems>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.wildfly.plugins</groupId>
-                        <artifactId>wildfly-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>apply-patch-file</id>
-                                <phase>generate-test-resources</phase>
-                                <goals>
-                                    <goal>execute-commands</goal>
-                                </goals>
-                                <configuration>
-                                    <offline>true</offline>
-                                    <fail-on-error>false</fail-on-error>
-                                    <commands>
-                                        <command>patch apply --path ${project.build.directory}/hibernate-validator-modules-${project.version}-wildfly-${wildfly.version}-patch.zip</command>
-                                    </commands>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <jbossHome>${wildfly.target-dir}</jbossHome>
-                        </configuration>
-                    </plugin>
-                    <!-- Copy additional modules -->
-                    <plugin>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-resources</id>
-                                <phase>generate-test-resources</phase>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <configuration>
-                                    <outputDirectory>${wildfly.target-dir}/modules/system/layers/base/</outputDirectory>
-                                    <resources>
-                                        <resource>
-                                            <directory>src/test/modules</directory>
-                                            <filtering>true</filtering>
-                                        </resource>
-                                    </resources>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <!-- Update standalone.xml -->
-                    <plugin>
-                        <groupId>org.codehaus.gmavenplus</groupId>
-                        <artifactId>gmavenplus-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>update-standalone-xml</id>
-                                <phase>generate-test-resources</phase>
-                                <goals>
-                                    <goal>execute</goal>
-                                </goals>
-                                <configuration>
-                                    <scripts>
-                                        <script>file:///${pom.basedir}/src/script/updateStandaloneXml.groovy</script>
-                                    </scripts>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+				<plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
+							<!--  
+							<argLine>-Djava.util.logging.config.file=C:\\atemp\\logging.properties -Duser.home=${container.home}</argLine> -->
                             <forkMode>once</forkMode>
                             <systemPropertyVariables>
                                 <arquillian.launch>incontainer</arquillian.launch>
                             </systemPropertyVariables>
+							<additionalClasspathElements>
+								<additionalClasspathElement>${container.home}/lib/com.ibm.ws.org.jboss.weld.3.0.2_1.0.19.jar</additionalClasspathElement>
+							</additionalClasspathElements>
                         </configuration>
                     </plugin>
                 </plugins>
