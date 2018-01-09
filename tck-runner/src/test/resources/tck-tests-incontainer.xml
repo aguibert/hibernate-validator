@@ -28,6 +28,7 @@
 	<class name="org.hibernate.beanvalidation.tck.tests.constraints.builtinconstraints.PatternConstraintTest"/>
 	
 	  <!-- Exclude everything that has passed already: -->
+	  <!-- 
       <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.ExpressionLanguageMessageInterpolationTest$ValidContinent"> <methods> <exclude name=".*" /> </methods> </class>
       <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$ValidTestBean"> <methods> <exclude name=".*" /> </methods> </class>
       <class name="org.hibernate.beanvalidation.tck.tests.messageinterpolation.MessageInterpolationTest$1"> <methods> <exclude name=".*" /> </methods> </class>
@@ -1390,7 +1391,7 @@
       <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.GroupConversionValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
       <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.PostalSequence"> <methods> <exclude name=".*" /> </methods> </class>
       <class name="org.hibernate.beanvalidation.tck.tests.validation.groupconversion.containerelement.AnnotationBasedContainerElementGroupConversionValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
-	  
+	  -->
 
 </classes>
     </test>
