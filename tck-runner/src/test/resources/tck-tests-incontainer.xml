@@ -18,9 +18,39 @@
 		
 
 <classes>
-	<!-- CHALLENGE:  This test expects an error on-use of the app, but Liberty throws an error on deployment due to CDI scanning -->
+	<!-- Liberty BUG: cannot load an app-defined validator -->
+	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapCustomProviderDefinedInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.DefaultProviderSpecifiedInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationTest"> <methods> <exclude name=".*" /> </methods> </class>
+
+	<!-- CHALLENGE:  These tests expects an error on-use of the app, but Liberty throws an error on deployment due to CDI scanning -->
 	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.BootstrapConfigurationWithEmptyValidatedExecutableTypesTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.customprovider.BootstrapNonAvailableValidationProviderTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.MultipleValueExtractorsInValidationXmlForSameTypeAndTypeArgumentTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.valueextraction.declaration.ValueExtractorWithNoPublicNoArgConstructorInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
 	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.ClockProviderSpecifiedInValidationXmlNoDefaultConstructorTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.ConfiguredBeanNotInClassPathTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.fieldlevel.WrongFieldNameTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.MandatoryNameAttributeTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.MissingMandatoryElementTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.propertylevel.WrongPropertyNameTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constraintdeclaration.ReservedElementNameTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.constructorvalidation.UnknownConstructorValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.invalid.InvalidValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.MessageInterpolatorSpecifiedInValidationXmlNoDefaultConstructorTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.MethodAsGetterAndMethodNodeTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.methodvalidation.UnknownMethodValidationTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.MissingClassNameOnBeanNodeTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.TraversableResolverSpecifiedInValidationXmlNoDefaultConstructorTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.UnknownVersionInValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+		
+	<!-- MINOR TCK BUG: needs to include org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.DummyMessageInterpolator in app -->
+	<class name="org.hibernate.beanvalidation.tck.tests.bootstrap.CustomMessageInterpolatorTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version10InValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version11InValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	<!-- MINOR TCK BUG: needs to include org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.DummyClockProvider in app -->
+	<class name="org.hibernate.beanvalidation.tck.tests.xmlconfiguration.versioning.Version20InValidationXmlTest"> <methods> <exclude name=".*" /> </methods> </class>
+	
 	<!-- Skip JavaFX tests -->
 	<class name="org.hibernate.beanvalidation.tck.tests.valueextraction.builtin.JavaFXValueExtractorsTest"> <methods> <exclude name=".*" /> </methods> </class>
 	<class name="org.hibernate.beanvalidation.tck.tests.constraints.containerelement.NestedContainerElementConstraintsTest"> <methods> <exclude name=".*" /> </methods> </class>
